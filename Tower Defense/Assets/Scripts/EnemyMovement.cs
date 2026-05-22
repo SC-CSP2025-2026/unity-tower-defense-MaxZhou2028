@@ -5,14 +5,13 @@ public class EnemyMovement : MonoBehaviour
     [field: SerializeField]
     public float Speed { get; private set;} = 1f;
     [field: SerializeField]
-    public Waypoint Target { get; set; }
+    public Waypoint Target { get;set; }
 
 
     // start is called once before the first ececution of Update after the MonoBehavir
     void Start ()
 {
-    transform.position = Target.transform.position;
-    
+    transform.position = Target.transform.position; 
 }
     // Update is called once per frame
     void Update()
@@ -30,6 +29,5 @@ public class EnemyMovement : MonoBehaviour
             transform.LookAt(Target.transform);
         }
     }
-
-    }
+}
     
