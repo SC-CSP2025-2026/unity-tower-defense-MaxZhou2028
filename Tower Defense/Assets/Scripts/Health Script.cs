@@ -5,7 +5,16 @@ public class Health : MonoBehaviour
     [field: SerializeField]
     public float BaseHealth { get; private set; } = 2f;
 
-    [field: SerializeField]
+    [field: SerializeField] 
     public float Damage { get; private set;}
-    
+
+    public void Applyhit(projectile projectile)
+    {
+        Damage += projectile.Damage;
+        if (Damage >= BaseHealth)
+        {
+            Object.Destroy(gameObject);
+        }
+    }
+
 }

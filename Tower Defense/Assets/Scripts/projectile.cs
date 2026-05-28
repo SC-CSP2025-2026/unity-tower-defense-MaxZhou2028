@@ -10,4 +10,27 @@ public class projectile : MonoBehaviour
 
    [field: SerializeField]
    public Transform Target { get; private set; }
+
+   void Update()
+    {
+        if (Target == null)
+        {
+            Object.Destroy(gameObject);
+            return; // quit the method
+        }
+
+        transform.LookAt(Target.transform);
+        transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, Speed * Time.deltaTime);
+        float distance = Vector3.Distance(transform.position, Target.transform.position);
+        if (distance <= Mathf.Epsilon)
+        {
+            Health healthComponent = Target.GetComponentInParent<Health>();
+            if (healthComponent !=null)
+            {
+                healthComponent.Applyhit(this);
+            }
+            Object.Destroy(gameObject);
+        }
+    }
+
 }
