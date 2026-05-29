@@ -9,7 +9,7 @@ public class projectile : MonoBehaviour
    public float Damage {get; private set;} = 1f;
 
    [field: SerializeField]
-   public Transform Target { get; private set; }
+   public Transform Target { get;  set; }
 
    void Update()
     {
@@ -31,6 +31,7 @@ public class projectile : MonoBehaviour
             }
             Object.Destroy(gameObject);
         }
-    }
 
+
+    }
 }
