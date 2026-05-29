@@ -25,7 +25,9 @@ public class TurretAttack : MonoBehaviour
         Fire();
         IsCoolingDown = true;
         Invoke(nameof(SetIsCoolingDownToFalse), CooldownTime);
-    }public void SetIsCoolingDownToFalse()
+    
+    }
+    public void SetIsCoolingDownToFalse()
     {
         IsCoolingDown = false;
     }
@@ -34,6 +36,6 @@ public class TurretAttack : MonoBehaviour
     {
         projectile newProjectile = Instantiate(ProjectilePrefab);
         newProjectile.transform.position = transform.position;
-        newProjectile.Target = AoE.Targets[0];
+        newProjectile.Target = AoE.Targets[0].transform;
     }
 } 
