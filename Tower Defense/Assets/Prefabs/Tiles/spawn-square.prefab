@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7558267617246765862}
   - component: {fileID: 3420502821834779244}
   - component: {fileID: 7701846609708185350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spawn-square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

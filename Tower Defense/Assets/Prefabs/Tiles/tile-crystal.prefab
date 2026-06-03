@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 993316426375079793}
   - component: {fileID: 7703187508595293788}
   - component: {fileID: 1895633445780588164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tile-crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
