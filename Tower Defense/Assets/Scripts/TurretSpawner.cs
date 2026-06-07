@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class TurretSpawner : MonoBehaviour
 {
@@ -7,7 +6,7 @@ public class TurretSpawner : MonoBehaviour
     public GameObject TargetGrid {get; private set;}
 
     [field: SerializeField]
-    public GameObject TurretPrefab{get; private set;}
+    public GameObject TurretPrefab {get; set;}
 
     [field: SerializeField]
     public PlayerController Controller{get; private set;}
@@ -42,7 +41,7 @@ public class TurretSpawner : MonoBehaviour
         }
         if (CanSpawn(tileController))
         {
-            GameObject newTurret = Instantiate(TurretPrefab);
+            GameObject newTurret = Instantiate(TurretPrefab, Controller.transform);
             newTurret.transform.position = tileController.transform.position;
             tileController.IsOccupied = true;
             Controller.Gold -= 50;
